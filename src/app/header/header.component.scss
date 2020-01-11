@@ -1,0 +1,20 @@
+.header {
+    display: inline-flex;
+    width: 100%;
+    background-color: #ff7200;
+}
+
+.header-left {
+width: 70%;
+}
+
+.header-right {
+width: 30%;
+text-align: right;
+padding-right: 10px;
+}
+
+.header-menu {
+cursor: pointer;
+padding-left: 4px;
+}
