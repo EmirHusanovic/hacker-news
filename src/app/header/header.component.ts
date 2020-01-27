@@ -12,5 +12,5 @@ export class HeaderComponent implements OnInit {
   ngOnInit() {
   }
 
-  public menuTabs : any[] = ['news', 'past', 'comments', 'ask', 'show', 'jobs', 'submit'];
+  public menuTabs : any[] = ['news |', 'past |', 'comments |', 'ask |', 'show |', 'jobs |', 'submit'];
 } 

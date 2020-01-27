@@ -1,1 +1,4 @@
+<div class="home">
 <app-header></app-header>
+<app-single-story *ngFor="let id of stories; let i = index" [id]="id" [index]="i+1"></app-single-story>
+</div>

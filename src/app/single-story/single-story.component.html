@@ -1,0 +1,21 @@
+<table>
+    <tr>
+        <td><span class="gray">{{index}}</span></td>
+        <td><i class="fas fa-caret-up caret-up gray"></i></td>
+        <td><span class="story-title">{{data.title}}</span></td>
+        <td><a href="{{data.url}}" class="story-details gray">({{hostUrl}})</a></td>
+    </tr>
+    <tr>
+        <td colspan="2"></td>
+        <td>
+            <div class="bottom-details story-details gray">
+                <span>{{data.score}} points by
+                    <a href="">{{data.by }}</a>
+                    <a href=""> {{hoursAgo}} hours ago </a>|    
+                    <a href="">  hide </a>|
+                    <a href="">{{ data.kids?.length}} comments</a>
+                </span>
+            </div>
+        </td>
+    </tr>
+</table>
