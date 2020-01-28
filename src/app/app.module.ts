@@ -7,6 +7,8 @@ import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { HeaderComponent } from './header/header.component';
 import { SingleStoryComponent } from './single-story/single-story.component';
+import { NgxSpinnerModule } from "ngx-spinner";
+ 
 
 @NgModule({
   declarations: [
@@ -19,7 +21,8 @@ import { SingleStoryComponent } from './single-story/single-story.component';
     AppRoutingModule,
     BrowserAnimationsModule,
     MatButtonModule,
-    HttpClientModule
+    HttpClientModule,
+    NgxSpinnerModule
   ],
   providers: [],
   bootstrap: [AppComponent]

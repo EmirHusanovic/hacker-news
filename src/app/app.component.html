@@ -1,4 +1,7 @@
 <div class="home">
 <app-header></app-header>
+<ngx-spinner [fullScreen]="true" type="ball-clip-rotate-multiple" size="large">
+    <p class="loading">Loading Stories...</p>
+</ngx-spinner>
 <app-single-story *ngFor="let id of stories; let i = index" [id]="id" [index]="i+1"></app-single-story>
 </div>

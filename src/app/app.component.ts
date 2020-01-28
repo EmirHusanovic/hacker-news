@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { HackerNewsService } from './hacker-news.service';
+import { NgxSpinnerService } from "ngx-spinner";
 
 @Component({
   selector: 'app-root',
@@ -10,14 +11,17 @@ export class AppComponent {
   title = 'hacker-news';
   public stories: any = [];
 
-  constructor(private api: HackerNewsService) {
-    
-    
+  constructor(private api: HackerNewsService,
+    private spinner: NgxSpinnerService) {
   }
 
-  async ngOnInit(){
+  async ngOnInit() {
+    this.spinner.show();
+    setTimeout(() => {
+      this.spinner.hide();
+    }, 5000);
+
     await this.get();
-    console.log("Aaaa are", this.stories);
   }
   private get headers(): { [key: string]: string } {
     return { 'Content-Type': 'application/json' };
@@ -25,8 +29,8 @@ export class AppComponent {
 
   async get() {
     this.stories = await this.api.getTopStories();
-    this.stories = this.stories.slice(0,30)
+    this.stories = this.stories.slice(0, 30)
   }
-  
+
 
 }
