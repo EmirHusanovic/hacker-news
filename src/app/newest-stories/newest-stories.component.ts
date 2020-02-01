@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { HackerNewsService } from '../hacker-news.service';
+import { NgxSpinnerService } from 'ngx-spinner';
+
 
 @Component({
   selector: 'app-newest-stories',
@@ -9,9 +11,10 @@ import { HackerNewsService } from '../hacker-news.service';
 export class NewestStoriesComponent implements OnInit {
 
   public stories : any = [];
-  constructor(public api: HackerNewsService) { }
+  constructor(public api: HackerNewsService, public spinner: NgxSpinnerService) { }
 
  async ngOnInit() {
+   this.api.showSpinner();
   await this.get();
   }
 

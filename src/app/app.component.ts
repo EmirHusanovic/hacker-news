@@ -16,15 +16,8 @@ export class AppComponent {
   }
 
   async ngOnInit() {
-    this.spinner.show();
-    setTimeout(() => {
-      this.spinner.hide();
-    }, 5000);
-
+    this.api.showSpinner();
     await this.get();
-  }
-  private get headers(): { [key: string]: string } {
-    return { 'Content-Type': 'application/json' };
   }
 
   async get() {

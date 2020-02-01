@@ -1,7 +1,7 @@
 import { Injectable, isDevMode } from '@angular/core';
 import { HttpClientModule, HttpClient } from '@angular/common/http';
-import { Observable } from 'rxjs';
-import { Story } from 'src/models/models';
+import { NgxSpinnerService } from 'ngx-spinner';
+
 //https://hacker-news.firebaseio.com/v0/topstories.json?orderBy=%22$key%22&startAt=%222%22&endAt=%225%22
 
 @Injectable({
@@ -9,12 +9,14 @@ import { Story } from 'src/models/models';
 })
 
 export class HackerNewsService {
-    constructor(private http: HttpClient){
+    constructor(private http: HttpClient,public spinner: NgxSpinnerService){
     }
-
-    // getTopStoriesIds(): Observable<any>{
-    //     return this.http.get("https://hacker-news.firebaseio.com/v0/topstories.json?orderBy=%22$key%22&startAt=%222%22&endAt=%225%22");
-    // }
+    showSpinner(){
+        this.spinner.show();
+    setTimeout(() => {
+      this.spinner.hide();
+    }, 5000);
+    }
 
     async getTopStories() {
         return await this.http.get("https://hacker-news.firebaseio.com/v0/topstories.json").toPromise();
@@ -25,4 +27,6 @@ export class HackerNewsService {
     async getSingleStory(id)  : Promise<any>{
         return await this.http.get("https://hacker-news.firebaseio.com/v0/item/"+id+".json?print=pretty").toPromise();
     }
+
+
 }
