@@ -19,7 +19,9 @@ export class HackerNewsService {
     async getTopStories() {
         return await this.http.get("https://hacker-news.firebaseio.com/v0/topstories.json").toPromise();
     }
-
+    async getNewStories() {
+        return await this.http.get("https://hacker-news.firebaseio.com/v0/newstories.json").toPromise();
+    }
     async getSingleStory(id)  : Promise<any>{
         return await this.http.get("https://hacker-news.firebaseio.com/v0/item/"+id+".json?print=pretty").toPromise();
     }

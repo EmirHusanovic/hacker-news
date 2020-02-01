@@ -31,8 +31,10 @@ export class SingleStoryComponent implements OnInit {
   }
 
   setUrl(url){
+    if(url){
     this.url = new URL(url);
     return this.url.host;
+    }
   }
 
   hoursPassed(time) {

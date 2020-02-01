@@ -8,13 +8,17 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { HeaderComponent } from './header/header.component';
 import { SingleStoryComponent } from './single-story/single-story.component';
 import { NgxSpinnerModule } from "ngx-spinner";
+import { NewStoriesComponent } from './new-stories/new-stories.component';
+import { NewestStoriesComponent } from './newest-stories/newest-stories.component';
  
 
 @NgModule({
   declarations: [
     AppComponent,
     HeaderComponent,
-    SingleStoryComponent
+    SingleStoryComponent,
+    NewStoriesComponent,
+    NewestStoriesComponent
   ],
   imports: [
     BrowserModule,
