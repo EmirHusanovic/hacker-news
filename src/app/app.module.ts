@@ -10,6 +10,7 @@ import { SingleStoryComponent } from './single-story/single-story.component';
 import { NgxSpinnerModule } from "ngx-spinner";
 import { NewStoriesComponent } from './new-stories/new-stories.component';
 import { NewestStoriesComponent } from './newest-stories/newest-stories.component';
+import { FooterComponent } from './footer/footer.component';
  
 
 @NgModule({
@@ -18,7 +19,8 @@ import { NewestStoriesComponent } from './newest-stories/newest-stories.componen
     HeaderComponent,
     SingleStoryComponent,
     NewStoriesComponent,
-    NewestStoriesComponent
+    NewestStoriesComponent,
+    FooterComponent
   ],
   imports: [
     BrowserModule,
